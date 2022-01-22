@@ -1,7 +1,6 @@
 var express=require("express");
 var router=express.Router();
 var passport=require("passport"),
-	User=require("../models/user"),
 	middleWare=require("../middleware/func");
 
 

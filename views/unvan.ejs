@@ -5,13 +5,13 @@
 	<div class=" mt-3 d-flex justify-content-center align-items-center">
 		
 		<h1>
-			ÜNVAN EKLE
+			TITLES
 		</h1>
 	</div>
 	<form action="/newunv" style="mt-2" method="POST">
 	<div class="form-row" >
     <div class="col form-group">
-      <input type="text" class="form-control" placeholder="ÜNVAN" name="name">
+      <input type="text" class="form-control" placeholder="TITLE" name="name">
   
    
 		
@@ -21,24 +21,19 @@
     <div class="col form-group">
       <select class="form-control"id="select1" name="check">
 		  <option value="true">
-			  AKTİF
+			  ACTIVE
 		  </option>
-		  <option value="false">PASİF
+		  <option value="false">PASSIVE
 		  </option>
 		</select>
     </div>
-			<button href="/" class="btn btn-success btn-md" style="height:38px;" >ÜNVAN EKLE</button>
+			<button href="/" class="btn btn-success btn-md" style="height:38px;" >ADD</button>
 		</div>
 	
 
 	
 </form>
-	<div class="d-flex justify-content-center align-items-center">
-		
-		<h1>
-			ÜNVANLAR
-		</h1>
-	</div>
+	
 <% unvan.forEach(function(unv){%>
 		
 	<div>
@@ -52,17 +47,17 @@
 	  <select class=" form-control" name="check">
 			<%if(unv.check){%>
 			<option value="true">
-			  AKTİF
+			  ACTIVE
 		  </option>
-		  <option value="false">PASİF
+		  <option value="false">PASSIVE
 		  </option>
 			
 			<%}
 			else{%>
-			<option value="false">PASİF
+			<option value="false">PASSIVE
 		  </option>
 			<option value="true">
-			  AKTİF
+			  ACTIVE
 		  </option>
 		  
 			
@@ -70,7 +65,7 @@
 		  
 		</select>
 	  </div>
-	  <button href="/" class="btn btn-success btn-md" style="height:38px; width:100px;" >GÜNCELLE</button>
+	  <button href="/" class="btn btn-success btn-md" style="height:38px; width:100px;" >UPDATE</button>
 	  
 	  
 	  
@@ -79,7 +74,7 @@
 		
 		</form>
 		<form method="POST" action="/newunv/<%=unv._id%>?_method=DELETE"  style=" display: inline;" >
-		<button href="/" class="btn btn-danger  btn-md" style="height:38px; width:100px;" >SİL</button>
+		<button href="/" class="btn btn-danger  btn-md" style="height:38px; width:100px;" >DELETE</button>
 	</form>
   </div>
 		

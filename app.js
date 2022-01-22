@@ -21,11 +21,14 @@ mongoose=require("mongoose"),
     
 
 
-
+app.use(express.static('public'));
 app.set("view engine","ejs");
-var bodyparser=require("body-parser");
-app.use(bodyparser.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost/Inventory");
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+mongoose.connect("mongodb://localhost/Inventory", { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 //PASSPORT CONFIGURATION
   app.use(require("express-session")({

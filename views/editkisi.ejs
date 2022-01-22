@@ -1,0 +1,155 @@
+<%-include("partials/header") %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+<script>
+$( function() {
+    $( ".datepicker" ).datepicker();
+  } );
+	
+
+	
+</script>
+
+<div class="container">
+	<div class="d-flex justify-content-center align-items-center">
+		
+		<h1>
+			EMPLOYEE INFORMATIONS
+		</h1>
+	</div>
+	<form action="/personel/<%=kisi._id%>?_method=PUT" method="POST">
+	<div class="form-row" >
+    <div class="col form-group">
+		<strong>NAME</strong>
+      <input type="text" class="form-control" value="<%=kisi.isim%>"  name="name">
+  
+   
+		
+  </div>
+		
+    
+    <div class="col form-group">
+			<strong>LOCATION</strong>
+      <input type="text" value="<%=kisi.lokasyon%>" class="form-control" name="lokasyon">
+    </div>
+			<div class="col form-group">
+					<strong>IDENTITY</strong>
+      <input type="text" value="<%=kisi.tc%>" class="form-control" name="tc">
+    </div>
+		</div>
+		<div class="form-row" >
+			<div class="col form-group">
+				<strong>NUMBER</strong>
+      <input type="text" value="<%=kisi.numara%>" class="form-control"  name="numara">
+    </div>
+			<div class="col form-group">
+      
+				
+  <strong>DEPARTMENT</strong>
+  <select class="form-control"  name="departman">
+	  
+		<%departman.forEach(function(departman){%>
+	  
+	  <%if(kisi.departman===departman.isim){%>
+	  <option value="<%=departman.isim%>">
+		  <%=departman.isim%>
+	  </option>
+	  <%}}) %>
+		
+	 <%departman.forEach(function(departman){%>
+	        <%if(kisi.departman!==departman.isim){%>
+	  
+		  <option value="<%=departman.isim%>"><%=departman.isim%></option>
+             <%}%>
+		  <%})%>
+	  </select>
+	  </div>
+			<div class="col form-group">
+      
+				
+  <strong>TITLE</strong>
+  <select class="form-control" name="unvan">
+	  <%unvan.forEach(function(unvan){%>
+	  
+	  <%if(kisi.unvan===unvan.isim){%>
+	  <option value="<%=unvan.isim%>">
+		  <%=unvan.isim%>
+	  </option>
+	  <%}}) %>
+		
+	 <%unvan.forEach(function(unvan){%>
+	        <%if(kisi.unvan!==unvan.isim){%>
+	  
+		  <option value="<%=unvan.isim%>"><%=unvan.isim%></option>
+             <%}%>
+		  <%})%>
+	  </select>
+	  </div>
+
+    </div>
+			
+		<div class="form-row" >
+			<div class="col form-group">
+				<strong>BIRTH DATE </strong>
+      <input type="text" class="form-control datepicker" value="<%=kisi.dogum%>" name="dogum">
+    </div>
+			<div class="col form-group">
+				<strong>ENTRY DATE</strong>
+     <input type="text" class="form-control datepicker" value="<%=kisi.is_giris%>" name="is_giris">
+    </div>
+			<%if(kisi.is_cikis){%>
+			<div class="col form-group">
+				<strong>LEAVING DATE</strong>
+     <input type="text" class="form-control datepicker" value="<%=kisi.is_cikis%>" name="is_giris">
+    </div>
+			<%}%>
+			<div class="col form-group">
+				<strong>E-MAIL</strong>
+      <input type="text" class="form-control" value="<%=kisi.email%>"  name="eposta">
+    </div>
+		</div>
+		<div class="form-row" >
+			
+		<div class="col form-group">
+			<strong>ADRESS</strong>
+				
+      <input style="width:950px;" type="text" class="form-control" value="<%=kisi.adres%>"  name="adres">
+    </div>
+			<div class="col form-group">
+			<strong>EXPLANATION</strong>
+				
+      <input style="width:150px;" type="text" class="form-control" value="<%=kisi.aciklama%>"  name="aciklama">
+    </div>
+			
+		</div>
+		
+  </div>
+	 <%if(!kisi.is_cikis){%>
+	<div class="d-flex justify-content-center align-items-center">
+		<button  class="btn btn-success btn-lg" >UPDATE</button>
+		
+ </form>
+		
+	<%}else {%>
+	  <div class="d-flex justify-content-center align-items-center">
+		</form>
+	     <a href="javascript:history.back()" class="btn btn-success btn-lg" style="width:7%;" >Go Back</a>
+		 
+		 <form action="/personel/pasif/<%=kisi._id%>?_method=PUT" method="POST">
+		
+		  <button style="background-color: red;" class="btn btn-danger   btn-lg" >DELETE</button>
+	    </form>  
+         
+		   
+	</div>
+	
+	<%}%>
+       
+		
+	
+	
+</div>
+
+
+
+
+<%- include("partials/footer") %>

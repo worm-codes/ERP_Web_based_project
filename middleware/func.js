@@ -1,11 +1,9 @@
 var middleWareObj={};
 
-	
-var User=require("../models/user");
 
 
 
-middleWareObj.isLoggedIn=function(req,res,next){//bu fonk yaziyoruz kullanicinin sayfasini kontrol ediyoruz girdimi girmedimi diye callback den hemen once yukarda
+middleWareObj.isLoggedIn=function(req,res,next){
 	if(req.isAuthenticated()){
 		return next();
 	}
@@ -14,7 +12,7 @@ middleWareObj.isLoggedIn=function(req,res,next){//bu fonk yaziyoruz kullanicinin
 		
 	}
 }
-middleWareObj.isLogged=function(req,res,next){//bu fonk yaziyoruz kullanicinin sayfasini kontrol ediyoruz girdimi girmedimi diye callback den hemen once yukarda
+middleWareObj.isLogged=function(req,res,next){
 	if(!req.user){
 		return next();
 	}

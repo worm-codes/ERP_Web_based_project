@@ -20,7 +20,7 @@
 	<div class=" mt-5 d-flex justify-content-center align-items-center mb-3">
 		
 		<h1>
-			MODEL EKLE
+			ADD MODEL
 		</h1>
 	</div>
 	
@@ -29,12 +29,12 @@
 	<div class="form-row" >
     <div class="col form-group">
 		<strong>MODEL</strong>
-      <input type="text" class="form-control" placeholder="MODEL İSİM" name="isim" >	
+      <input type="text" class="form-control" placeholder="MODEL NAME" name="isim" >	
 
   </div>
 
     <div class="col form-group">
-		<strong>ÜRÜN TÜRÜ</strong>
+		<strong>PRODUCT NAME</strong>
       <select class="form-control"id="select1" name="urunturu">
 		  <%urunturu.forEach(function(urunturu){%>
 		  <option value="<%=urunturu.isim;%>">
@@ -47,7 +47,7 @@
 	
 		
     <div class="col form-group">
-		<strong>MARKA</strong>
+		<strong>BRAND</strong>
       <select class="form-control"id="select1" name="marka" >
 		  <%marka.forEach(function(marka){%>
 		  <option value="<%=marka.isim;%>">
@@ -58,13 +58,13 @@
 		</select>
 		  </div>
 		<div class="col form-group">
-			<strong>AÇIKLAMA</strong>
-		<input type="text" class="form-control" placeholder="AÇIKLAMA" pattern=".{,23}" name="aciklama" >
+			<strong>EXPLANATION</strong>
+		<input type="text" class="form-control" placeholder="EXPLANATION" pattern=".{,23}" name="aciklama" >
   
 		</div>
 		<div class="col form-group">
 			<br>
-			<button href="/" class="btn btn-success btn-md " style="height:38px; margin-right:70%;" >+EKLE</button>
+			<button href="/" class="btn btn-success btn-md " style="height:38px; margin-right:70%;" >+ADD</button>
 			</div>
 		</div>
 </form>
@@ -83,20 +83,20 @@
 <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
 		
 		<h1>
-			MODELLER
+			MODELS
 		</h1>
 	</div>
 
 <table border="1"  style="border:1px solid black;margin-left:auto;margin-right:auto; width:99%; padding-top:25px;">
 	<thead>
 		<tr>
-		<th>İsim</th>
-		<th>Ürün Türü</th>
+		<th>Name</th>
+		<th>Product Name</th>
 		
 		
-		<th>Marka</th>
-			<th>Açıklama</th>
-			<th>İşlem</th>
+		<th>Brand</th>
+			<th>Explanation</th>
+			<th>Process</th>
 		
 		</tr>
 	</thead>
@@ -164,10 +164,10 @@
 					
 			 <td style="width:9%;" class="text-center"> 
 				    
-				  <button class="btn btn-success btn-md">GÜNCELLE</button>
+				  <button class="btn btn-success btn-md">UPDATE</button>
 				 </form>
 				  <form method="POST" action="/model/<%=per._id;%>?_method=DELETE"  style="display: inline;" >
-		<button  class="btn btn-danger  btn-md" >SİL</button>
+		<button  class="btn btn-danger  btn-md" >DELETE</button>
 	</form>
 				</td>
 					

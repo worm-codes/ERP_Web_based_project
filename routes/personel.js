@@ -79,8 +79,10 @@ router.put("/cikar/:id",middleWare.isLoggedIn,async(req,res)=>{
 })
 
 router.put("/pasif/:id",middleWare.isLoggedIn,async (req,res)=>{
+	
 	await Kisi.findByIdAndUpdate(req.params.id,{condition:false},function(err,found){
 		if(err){
+			console.log(err)
 			res.render("errorpage");
 		}
 		else{
