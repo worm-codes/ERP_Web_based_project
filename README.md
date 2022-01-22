@@ -1,6 +1,6 @@
 
 # ERP
-## That is for controlling employee system and tracking product stock in company.
+## That is for controlling employee system and tracking product stock app for company.
 ## INSTALLATION
 ### Download MongoDB to your computer.
 ### write "npm install" to console, and npm will download all needed packages according to package.json file.
