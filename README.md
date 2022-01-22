@@ -1,5 +1,5 @@
 
-# # ERP
+## ERP
 # That is for controlling employee system and tracking product stock in company.
 # #INSTALLATION
 # Download MongoDB to your computer.
