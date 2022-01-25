@@ -7,3 +7,6 @@
 ## RUN PROCESS
 ### type "npm start" and it will automatically create DB for the app and run the app.
 ### create an account from register page and use every element of the app.
+
+## For all information about this project, you can read the Report.
+-  📝[Report](https://docdro.id/9LyKI61)
