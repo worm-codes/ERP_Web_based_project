@@ -1,6 +1,6 @@
 
 # ERP
-## That is for controlling employee system and tracking product stock app for company.
+## That is for controlling employee systems and tracking product stock for the company.
 ## TECHNOLOGIES
 - Node.js
 - MongoDB
